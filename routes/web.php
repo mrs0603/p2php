@@ -16,10 +16,10 @@ Route::redirect('/rom', '/room');
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'register'])->name('site.register');
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'saveregister'])->name('site.register'); //salvar
 //Route::post('/register', [App\Http\Controllers\RegisterController::class, 'showregister'])->name('site.register');
-Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
-Route::get('/register/{id}/edit', [RegisterController::class, 'edit'])->name('site.register.edit');//editar
-Route::put('/register/{id}', [RegisterController::class, 'update'])->name('site.register.update'); //editar
-Route::delete('/register/{id}', [App\Http\Controllers\RegisterController::class,'destroy'])->name('site.register.destroy'); //deletar
+Route::get('/registros', [RegisterController::class, 'show'])->name('register.show');
+Route::get('/registros/{id}/edit', [RegisterController::class, 'edit'])->name('site.register.edit');//editar
+Route::put('/registros/{id}', [RegisterController::class, 'update'])->name('site.register.update'); //editar
+Route::delete('/registros/{id}', [App\Http\Controllers\RegisterController::class,'destroy'])->name('site.register.destroy'); //deletar
 
 
 Route::redirect('/registrer', '/register');
