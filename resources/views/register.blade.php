@@ -9,5 +9,5 @@
 @endcomponent
 
 
-<p><a href="{{ route('site.index') }}">Clique aqui</a> para voltar a página inicial.</p>
+<p class="returnregister"><a href="{{ route('site.index') }}">Clique aqui</a> para voltar a página inicial.</p>
 @endsection

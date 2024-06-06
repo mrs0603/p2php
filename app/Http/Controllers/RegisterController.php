@@ -23,8 +23,8 @@ class RegisterController extends Controller
             'qtdopt' => (int) $_POST['qtdopt']
 
         ]);        
-        return view('register');
-
+    
+        return redirect()->route('register.show');
     }
 
    /* public function showregister(){
@@ -39,42 +39,40 @@ class RegisterController extends Controller
 
     public function show()
 {
-    $registers = register::all(); 
-    return view('registros', compact('registers')); // Passa os registros para a view
+    $registers = Register::all(); 
+    return view('registros', compact('registers'));
 }
 
 
-    public function edit($id)
-    {
-        $registers = register::findOrFail($id);
-        return view('edit', compact('registers'));
-    }
+public function edit($id){
+    $register = Register::find($id);
+    return view('edit', compact('register'));
+}
 
+public function update(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'nome' => 'required|string',
+        'cpf' => 'required|string',
+        'email' => 'required|string',
+        'casaopt' => 'required|integer',
+        'datainput' => 'required|date',
+        'dataoutput' => 'required|date',
+        'qtdopt' => 'required|integer',
+    ]);
 
-    public function update(Request $request, $id)
-    {
-        $validatedData = $request->validate([
-            'nome' => 'required|string',
-            'cpf' => 'required|string',
-            'email' => 'required|string',
-            'casaopt' => 'required|interger',
-            'datainput' => 'required|date',
-            'dataoutput' => 'required|date',
-            'qtdopt' => 'required|interger',
-        ]);
-    
-        $registers = register::findOrFail($id);
-    
-    
-        $registers->update($validatedData);
-        $registers->save();
-    
-        return redirect()->route('site.register')->with('success', 'Reserva atualizado com sucesso!');
-    }
+    $register = Register::findOrFail($id);
+
+    $register->update($validatedData);
+    $register->save();
+
+    return redirect()->route('register.show')->with('success', 'Reserva atualizada com sucesso!');
+}
+
 
     public function destroy($id)
 {
-    $register = register::findOrFail($id);
+    $register = Register::findOrFail($id);
     $register->delete();
     return redirect()->route('site.register')->with('success', 'Reserva deletada com sucesso!');
 }

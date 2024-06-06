@@ -1,9 +1,13 @@
+@extends('menu.menu')
+
+@section('title', 'Edit Register')
+
 @section('conteudo')
-<div class="container">
-    <h1>Editar Reserva</h1>
-    <form action="{{ route('site.register.update', $register->id) }}" method="POST" enctype="multipart/form-data" class="form-container">
-        @csrf
-        @method('PUT')
+    <div class="container">
+        <h1>Editar Reserva</h1>
+        <form action="{{ route('registers.update', $register->id) }}" method="POST">
+            @csrf
+            @method('PUT')
         <div class="mb-3">
             <label class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" name="nome" value="{{ $register->nome }}" required>
@@ -46,7 +50,12 @@
             </select>
         </div>
         
-        <button type="submit" class="btn btn-success">Confirmar</button>
-    </form>
-</div>
+        <button type="submit">Atualizar</button>
+        </form>
+        <form id="delete-form" action="{{ route('registers.destroy', $register->id) }}" method="POST" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button class="delete-button" type="submit">Excluir</button>
+        </form>
+    </div>
 @endsection

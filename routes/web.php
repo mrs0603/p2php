@@ -13,11 +13,18 @@ Route::redirect('/abot', '/about');
 Route::redirect('/abaut', '/about');
 Route::get('/room', [App\Http\Controllers\room::class, 'room'])->name('site.room');
 Route::redirect('/rom', '/room');
+
+
+
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'register'])->name('site.register');
+
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'saveregister'])->name('site.register'); //salvar
-//Route::post('/register', [App\Http\Controllers\RegisterController::class, 'showregister'])->name('site.register');
-Route::get('/registros', [RegisterController::class, 'show'])->name('register.show');
-Route::get('/registros/{id}/edit', [RegisterController::class, 'edit'])->name('site.register.edit');//editar
+
+Route::get('/registros', [App\Http\Controllers\RegisterController::class, 'show'])->name('register.show');
+
+Route::get('/registros/{id}/edit', [RegisterController::class, 'edit'])->name('registers.edit');
+
+
 Route::put('/registros/{id}', [RegisterController::class, 'update'])->name('site.register.update'); //editar
 Route::delete('/registros/{id}', [App\Http\Controllers\RegisterController::class,'destroy'])->name('site.register.destroy'); //deletar
 

@@ -56,6 +56,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; 
+    opacity: 0.7;
 }
 
 .homeh1 {
@@ -107,6 +108,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; 
+    opacity: 0.65;
 }
 
 .about{
@@ -114,9 +116,10 @@ body {
     top: 100%; 
     left: 5%;
     right: 5%; 
-    color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
     font-size: 1.5rem; 
     text-align: justify;
+    font-weight: bold;
 }
 
 .aboutreturn{
@@ -135,7 +138,7 @@ body {
     position: absolute;
     top: 30%; 
     left: 20%; 
-    color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
     font-size: 3rem; 
 }
 
@@ -158,7 +161,142 @@ body {
 .profile-title {
     margin: 0; 
     font-size: 1.2rem; 
+    color: rgb(0, 0, 0);
+}
+
+.formregister{
+    position: absolute;
+    top: 30%;
+    right: 10%; 
+    width: 80%;
+    height: auto;
+  
+    margin-left: 10%;
+}
+
+.input{
+    height: 2rem;
+    width: 100%;
+}
+
+.buttonenv{
+    width: 100%;
+    height: 2rem;
+}
+
+
+.rooms {
+   
+    display: flex;
+}
+
+.rooms1 {
+   margin-top: 15%;
+   display: flex;
+}
+
+.texto {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+}
+
+.texto h3 {
+  font-size: 2.5rem;
+}
+
+.imagem {
+    flex: 1.5;
+    margin-top: 5rem;
+}
+
+.imagem img {
+    width: 100%; /* Garante que a imagem ocupe todo o espaço disponível */
+    height: 30rem;
+}
+
+.roomsh1{
+    top: 30%;
+    position: absolute;  
+    margin-left: 30%;
+}
+
+.returnrooms{
+
+    position: absolute;
+    top:15%;  
+    margin-left: 5%;
+    font-size: 1rem; 
+
+}
+
+.returnregister{
+    margin-top: 50%;
+    margin-left: 5%;
+}
+
+.container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reserva-card {
+  
+    margin: 10px;
+}
+
+.card {
+    margin-top: 30%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 7px;
+    width: 300px; /* Ajuste conforme necessário */
+    background-color: rgb(172, 170, 170);
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cardtext {
+    margin-bottom: 5px;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button,
+.edit-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-button {
+    border-radius: 10px;
+    background-color: #007bff;
+    
+}
+
+.edit-button a {
+    text-decoration: none;
     color: white;
 }
+
+
+
+
+
+
 
 
